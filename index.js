@@ -10,27 +10,66 @@ class Numbers {
     }
   }
   count() {
+    return this.data.length;
     //return the count of numbers in data
   }
   printNumbers() {
+    for (let i = 0; i < this.data.length; i++) {
+      console.log(`The key is ${[i]} and the value is ${this.data[i]}`);
+    }
+
     //print the numbers in data
   }
   odds() {
+    let countOdd = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] % 2 !== 0) {
+        countOdd.push(this.data[i]);
+      }
+    }
+    return countOdd;
     //return the odd numbers in data
   }
   evens() {
+    let countEven = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] % 2 === 0) {
+        countEven.push(this.data[i]);
+      }
+    }
+    return countEven;
     //return the even numbers in data
   }
   sum() {
+    const sumOfNumbers = this.data.reduce((acc, current) => acc + current);
+    return sumOfNumbers;
     //return the sum of the numbers
   }
   product() {
+    const productOfNumbers = this.data.reduce((acc, current) => acc * current);
+    return productOfNumbers;
     //return the product of the numbers
   }
   greaterThan(target) {
+    // let greater = [];
+    // for (let i = 0; i < this.data.length; i++) {
+    //   if (this.data[i] > target) {
+    //     greater.push(this.data[i]);
+    //   }
+    // }
+    const greater = this.data.filter((number) => number > target);
+    return greater;
     //return the numbers greater than the target
   }
   howMany(target) {
+    // let match = [];
+    // for (let i = 0; i < this.data.length; i++) {
+    //   if (this.data[i] === target) {
+    //     match.push(this.data[i]);
+    //   }
+    // }
+    const match = this.data.filter((number) => number === target);
+    return match;
     //return the count of a given number
   }
 }
